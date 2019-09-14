@@ -1,0 +1,34 @@
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { LoginPageComponent } from './login-page/login-page.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
+import { SuperAdminDashboardComponent } from './super-admin-dashboard/super-admin-dashboard.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { TrainerDashboardComponent } from './trainer-dashboard/trainer-dashboard.component';
+import { StudentDashboardComponent } from './student-dashboard/student-dashboard.component';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    LoginPageComponent,
+    SuperAdminDashboardComponent,
+    AdminDashboardComponent,
+    TrainerDashboardComponent,
+    StudentDashboardComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    Ng4LoadingSpinnerModule.forRoot()
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
