@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Rubik:500,700|Roboto:400,600");
 body{
     width: 100%;
     height: auto;
@@ -119,4 +120,21 @@ body{
           content:'Google+';
       }
   
+  }
+
+  #enquiry_btn{
+      display: block;
+      background-color: #000;
+      position: fixed;
+      right: 0;
+      top:40%;
+      border-radius: 5px 0px 0px 5px;
+      text-decoration: none;
+      color: #fff;
+      font-family: "Robato",sans-serif;
+      writing-mode: vertical-rl;
+        text-orientation: upright;
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+        padding: 10px 10px;
   }

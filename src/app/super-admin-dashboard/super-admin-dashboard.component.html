@@ -1,3 +1,59 @@
-<p>
-  super-admin-dashboard works!
-</p>
+
+<div class="container-fluid">
+  <div class="container">
+    <div class="col-md-6">
+        <div class="formBox">
+          <form>
+              <div class="row">
+                <div class="col-sm-12">
+                  <h1>Create Admin</h1>
+                </div>
+              </div>
+    
+              <div class="row">
+                <div class="col-sm-12">
+                  <div class="inputBox ">
+                    <input type="text" name="adminDetail.username" [(ngModel)]="adminDetail.username" class="input form-control" placeholder="Username">
+                  </div>
+                </div>            
+              </div>
+    
+              <div class="row">
+                <div class="col-sm-12">
+                  <div class="inputBox">
+                    <input type="text" name="adminDetail.email" [(ngModel)]="adminDetail.email" class="input form-control" placeholder="Email">
+                  </div>
+                </div>
+              </div>
+              
+              <div class="row">
+                <div class="col-sm-12">
+                  <div class="inputBox">
+                    <input type="text" name="adminDetail.mobile" [(ngModel)]="adminDetail.mobile" class="input form-control" placeholder="Mobile">
+                  </div>
+                </div>
+              </div>
+    
+              <div class="row">
+                <div class="col-sm-12">
+                  <div class="inputBox">
+                    <input type="text" name="adminDetail.password" [(ngModel)]="adminDetail.password" class="input form-control" placeholder="Password">
+                  </div>
+                </div>
+              </div>
+    
+              <div class="row">
+                <div class="col-sm-12">
+                  <input type="submit" name="" class="button" value="Submit" (click)="submit()">
+                </div>
+              </div>
+          </form>
+        </div>
+    </div> 
+    <div class="col-md-6">
+      <ul>
+        <li></li>
+      </ul>
+    </div>   
+  </div>
+</div>

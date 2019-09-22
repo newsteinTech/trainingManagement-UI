@@ -3,11 +3,11 @@
   <form class="form-signin" *ngIf="showSignIn">
       <h1 class="h3 mb-3 font-weight-normal" style="text-align: center"> Sign in</h1>
       <div class="input-group">
-        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="" name="useremail" [(ngModel)]="userlogin.useremail">
+        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="" name="userlogin.useremail" [(ngModel)]="userlogin.useremail">
       </div>
 
       <div class="input-group">
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="" name="userpassword" [(ngModel)]="userlogin.userpassword">
+        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="" name="userlogin.userpassword" [(ngModel)]="userlogin.userpassword">
       </div>
 
       <div class="input-group">
@@ -27,13 +27,13 @@
     </form>
 
     <form action="#" class="form-signup" *ngIf="showSignUp">
-        <input type="text" id="user-name" class="form-control" placeholder="Username" name="name" required="" autofocus="" [(ngModel)]="userdetail.username">
-        <input type="text" id="user-mobile" class="form-control" placeholder="Mobile" name="mobile" required="" autofocus="" [(ngModel)]="userdetail.mobile">
-        <input type="email" id="user-email" class="form-control" placeholder="Email address" name="email" required autofocus="" [(ngModel)]="userdetail.email">
-        <input type="password" id="user-pass" class="form-control" placeholder="Password" name="password" required autofocus="" [(ngModel)]="userdetail.password">
+        <input type="text" id="user-name" class="form-control" placeholder="Username" name="userdetail.name" required="" autofocus="" [(ngModel)]="userdetail.username">
+        <input type="text" id="user-mobile" class="form-control" placeholder="Mobile" name="userdetail.mobile" required="" autofocus="" [(ngModel)]="userdetail.mobile">
+        <input type="email" id="user-email" class="form-control" placeholder="Email address" name="userdetail.email" required autofocus="" [(ngModel)]="userdetail.email">
+        <input type="password" id="user-pass" class="form-control" placeholder="Password" name="userdetail.password" required autofocus="" [(ngModel)]="userdetail.password">
         <input type="password" id="user-repeatpass" class="form-control" placeholder="Confirm Password" name="confirmPassword" required autofocus="">
         <div class="dropdown" class="form-control">
-          <select class="custom-select custom-select-sm" name="role" placeholder="User Role" [(ngModel)]="userdetail.role">
+          <select class="custom-select custom-select-sm" name="userdetail.role" placeholder="User Role" [(ngModel)]="userdetail.role">
             <option value="admin">Admin</option>
             <option value="trainer">Trainer</option>
             <option value="student">Student</option>
@@ -47,5 +47,8 @@
         <a href="#" id="cancel_signup" (click)="cancelSignup()"><i class="fa fa-angle-left"></i> Back</a>
     </form>
     <br>
+</div>
 
+<div>
+  <a href="#" routerLink="/registration" id="enquiry_btn" (click)="enquiry()">Enquiry</a>
 </div>

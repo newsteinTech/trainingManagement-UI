@@ -52,33 +52,39 @@ export class LoginPageComponent implements OnInit {
     this.showSignUp = false;
   }
 
-  public submitDetails(){
+  public submitDetails():void{
     this.spinnerService.show();
     this.loginService.postDataLogin(this.userlogin).subscribe(res => {
       console.log(res);
-      if(res.detail.role == 'super-admin'){
+      let user = JSON.parse(atob(res.split('.')[1]));
+     
+      if(user.role == 'super-admin'){
         this.spinnerService.hide();
         this.router.navigate(['/superAdminDashboard']);
-      }else if(res.detail.role == 'admin'){
+      }else if(user.role == 'admin'){
         this.spinnerService.hide();
         this.router.navigate(['/adminDashboard']);
-      }else if(res.detail.role == 'trainer'){
+      }else if(user.role == 'trainer'){
         this.spinnerService.hide();
         this.router.navigate(['/trainerDashboard']);
-      }else if(res.detail.role == 'student'){
+      }else if(user.role == 'student'){
         this.spinnerService.hide();
         this.router.navigate(['/studentDashboard']);
       }
     });
   }
 
-  public submitUserInfo(){
+  public submitUserInfo():void{
     this.spinnerService.show();
     this.loginService.postDataRegister(this.userdetail).subscribe(res => {
       console.log(res);
       this.spinnerService.hide();
       this.router.navigate(['/instruction']);
     })
+  }
+
+  public enquiry(){
+    this.router.navigate(['/enquiry']);
   }
 
 }

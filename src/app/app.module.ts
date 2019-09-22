@@ -11,6 +11,8 @@ import { SuperAdminDashboardComponent } from './super-admin-dashboard/super-admi
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { TrainerDashboardComponent } from './trainer-dashboard/trainer-dashboard.component';
 import { StudentDashboardComponent } from './student-dashboard/student-dashboard.component';
+import { EnquiryComponent } from './enquiry/enquiry.component';
+import {AutocompleteLibModule} from 'angular-ng-autocomplete';
 
 @NgModule({
   declarations: [
@@ -19,13 +21,15 @@ import { StudentDashboardComponent } from './student-dashboard/student-dashboard
     SuperAdminDashboardComponent,
     AdminDashboardComponent,
     TrainerDashboardComponent,
-    StudentDashboardComponent
+    StudentDashboardComponent,
+    EnquiryComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    AutocompleteLibModule,
     Ng4LoadingSpinnerModule.forRoot()
   ],
   providers: [],

@@ -4,12 +4,16 @@ import { SuperAdminDashboardComponent } from './super-admin-dashboard/super-admi
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { TrainerDashboardComponent } from './trainer-dashboard/trainer-dashboard.component';
 import { StudentDashboardComponent } from './student-dashboard/student-dashboard.component';
+import { EnquiryComponent } from './enquiry/enquiry.component';
+import { LoginPageComponent } from './login-page/login-page.component';
 
 const routes: Routes = [
+  {path:'',component:LoginPageComponent},
   {path:'superAdminDashboard',component:SuperAdminDashboardComponent},
   {path:'adminDashboard',component:AdminDashboardComponent},
   {path:'trainerDashboard',component:TrainerDashboardComponent},
-  {path:'studentDashboard',component:StudentDashboardComponent}
+  {path:'studentDashboard',component:StudentDashboardComponent},
+  {path:'enquiry',component:EnquiryComponent}
 ];
 
 @NgModule({
