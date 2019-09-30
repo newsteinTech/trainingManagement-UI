@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { SuperAdminService } from '../services/super-admin.service';
-import { adminDetail } from '../models/adminDetails';
+import { userDetail } from '../models/userDetails';
 import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
 
 @Component({
@@ -10,27 +10,48 @@ import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
   styleUrls: ['./super-admin-dashboard.component.css']
 })
 export class SuperAdminDashboardComponent implements OnInit {
-  public adminList:adminDetail[];
-  public adminDetail:adminDetail;
+  public userList:userDetail[];
+  public userdetail:userDetail;
+  public editdetail:userDetail;
   constructor(private router:Router, private _superAdminService:SuperAdminService, private spinnerService: Ng4LoadingSpinnerService ) { 
-    this.adminDetail = new adminDetail();
+    this.userdetail = new userDetail();
   }
 
   ngOnInit() { 
     this.spinnerService.show();
-    this._superAdminService.getAdminList().subscribe((res)=>{
+    this._superAdminService.getAllUserList().subscribe((res)=>{
       console.log(res);
-      this.adminList = res;
+      this.userList = res;
       this.spinnerService.hide();
     })
   }
 
-  public submit(){
+  public submit_detail(){
     this.spinnerService.show();
-    this._superAdminService.postDataCreateAdmin(this.adminDetail).subscribe((res)=>{
-      console.log(res);
-      this.spinnerService.hide();
-    });
+    if(this.userdetail.role == 'admin'){
+      this._superAdminService.postDataCreateAdmin(this.userdetail).subscribe((res)=>{
+        console.log(res);
+        this.spinnerService.hide();
+      });
+    }else if(this.userdetail.role == 'trainer'){
+      this._superAdminService.postDataCreateTrainer(this.userdetail).subscribe((res)=>{
+        console.log(res);
+        this.spinnerService.hide();
+      });
+    }else if(this.userdetail.role == 'student'){
+      this._superAdminService.postDataCreateStudent(this.userdetail).subscribe((res)=>{
+        console.log(res);
+        this.spinnerService.hide();
+      });
+    }   
   }
 
+  public edit_detail(user_id){
+    this.spinnerService.show();
+    this._superAdminService.editUser(user_id).subscribe((res)=>{
+      console.log(res);
+      this.editdetail = res;
+      this.spinnerService.hide();
+    })
+  }
 }

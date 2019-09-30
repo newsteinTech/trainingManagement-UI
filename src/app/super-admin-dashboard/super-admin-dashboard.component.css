@@ -1,10 +1,11 @@
 body{
-	margin: 0;
-	padding: 0;
-	font-family: sans-serif;
-}
+    width: 100%;
+    height: auto;
+    background: #fff;
+    font-family: "Robato",sans-serif;
+    font-size: 17px;
+  }
 .formBox{
-	margin-top: 90px;
 	padding: 50px;
 	background-color:#ffffff4d;
 	box-shadow: 0 7px 7px rgba(0, 0, 0, 0.12), 0 12px 40px rgba(0,0,0,0.24);
@@ -50,3 +51,11 @@ textarea{
     background: #03A9F4;
     color: #fff;
 }
+
+.modal-dialog-slideout {min-height: 100%; margin: 0 0 0 auto;background: #fff;}
+.modal.fade .modal-dialog.modal-dialog-slideout {-webkit-transform: translate(100%,0)scale(1);transform: translate(100%,0)scale(1);}
+.modal.fade.show .modal-dialog.modal-dialog-slideout {-webkit-transform: translate(0,0);transform: translate(0,0);display: flex;align-items: stretch;-webkit-box-align: stretch;}
+.modal.fade.show .modal-dialog.modal-dialog-slideout .modal-body{overflow-y: auto;overflow-x: hidden;}
+.modal-dialog-slideout .modal-content{border: 0;}
+.modal-dialog-slideout .modal-header, .modal-dialog-slideout .modal-footer {height: 69px; display: block;} 
+.modal-dialog-slideout .modal-header h5 {float:left;}

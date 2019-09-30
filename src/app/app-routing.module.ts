@@ -6,10 +6,11 @@ import { TrainerDashboardComponent } from './trainer-dashboard/trainer-dashboard
 import { StudentDashboardComponent } from './student-dashboard/student-dashboard.component';
 import { EnquiryComponent } from './enquiry/enquiry.component';
 import { LoginPageComponent } from './login-page/login-page.component';
+import { SuperAdminSidebarComponent } from './super-admin-sidebar/super-admin-sidebar.component';
 
 const routes: Routes = [
   {path:'',component:LoginPageComponent},
-  {path:'superAdminDashboard',component:SuperAdminDashboardComponent},
+  {path:'superAdminDashboard',component:SuperAdminSidebarComponent},
   {path:'adminDashboard',component:AdminDashboardComponent},
   {path:'trainerDashboard',component:TrainerDashboardComponent},
   {path:'studentDashboard',component:StudentDashboardComponent},

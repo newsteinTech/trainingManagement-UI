@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
 
 
+
 @Component({
   selector: 'app-login-page',
   templateUrl: './login-page.component.html',
@@ -55,7 +56,7 @@ export class LoginPageComponent implements OnInit {
   public submitDetails():void{
     this.spinnerService.show();
     this.loginService.postDataLogin(this.userlogin).subscribe(res => {
-      console.log(res);
+      window.localStorage.setItem('token', res);
       let user = JSON.parse(atob(res.split('.')[1]));
      
       if(user.role == 'super-admin'){

@@ -14,13 +14,12 @@ export class EnquiryService {
     public enquirydetail: enquiryDetail;
   
     constructor(private httpclient:HttpClient) {
-      this.headers = new HttpHeaders({"content-Type" : "application/json"});
       this.host = "http://localhost:4000/";
     }
   
     public postDataEnquiry(request:enquiryDetail):Observable<any>{
       let url:string = this.host+"enquiry";
-      return this.httpclient.post<any>(url,request,{headers:this.headers});
+      return this.httpclient.post<any>(url,request);
     }
 
     public getAllCourse():Observable<any>{

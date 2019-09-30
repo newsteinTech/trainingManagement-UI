@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginPageComponent } from './login-page/login-page.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
 import { SuperAdminDashboardComponent } from './super-admin-dashboard/super-admin-dashboard.component';
@@ -12,7 +12,10 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { TrainerDashboardComponent } from './trainer-dashboard/trainer-dashboard.component';
 import { StudentDashboardComponent } from './student-dashboard/student-dashboard.component';
 import { EnquiryComponent } from './enquiry/enquiry.component';
-import {AutocompleteLibModule} from 'angular-ng-autocomplete';
+import { AutocompleteLibModule } from 'angular-ng-autocomplete';
+import { SuperAdminSidebarComponent } from './super-admin-sidebar/super-admin-sidebar.component';
+import { TokenInterceptor } from './auth/token.interceptor';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,8 @@ import {AutocompleteLibModule} from 'angular-ng-autocomplete';
     AdminDashboardComponent,
     TrainerDashboardComponent,
     StudentDashboardComponent,
-    EnquiryComponent
+    EnquiryComponent,
+    SuperAdminSidebarComponent
   ],
   imports: [
     BrowserModule,
@@ -30,9 +34,15 @@ import {AutocompleteLibModule} from 'angular-ng-autocomplete';
     HttpClientModule,
     FormsModule,
     AutocompleteLibModule,
+    AngularFontAwesomeModule,
     Ng4LoadingSpinnerModule.forRoot()
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: TokenInterceptor,
+    multi: true
+  }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
