@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "trainingManagementApp": {
+    "trainingManagement-UI": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/trainingManagementApp",
+            "outputPath": "dist/trainingManagement-UI",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -63,18 +63,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "trainingManagementApp:build"
+            "browserTarget": "trainingManagement-UI:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "trainingManagementApp:build:production"
+              "browserTarget": "trainingManagement-UI:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "trainingManagementApp:build"
+            "browserTarget": "trainingManagement-UI:build"
           }
         },
         "test": {
@@ -111,15 +111,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "trainingManagementApp:serve"
+            "devServerTarget": "trainingManagement-UI:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "trainingManagementApp:serve:production"
+              "devServerTarget": "trainingManagement-UI:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "trainingManagementApp"
+  "defaultProject": "trainingManagement-UI"
 }
