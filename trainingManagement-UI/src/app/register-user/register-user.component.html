@@ -1,0 +1,89 @@
+<div>
+<form class= "container mt-4l̥" #userForm = "ngForm" (ngSubmit)= onSubmit() novalidate>
+        <div class="form-row">
+
+            <div class="form-group col-md-6">
+                <label for="inputName">Name:</label>
+                <input type="text" #name="ngModel" required class="form-control" id="inputEmail4" placeholder="Name....."
+                name= "userName" [(ngModel)]= userModel.UserName [class.is-invalid]="name.invalid && name.touched">
+                <small class="text-danger" [class.d-none] = "name.valid || name.untouched"> Name is required </small>
+            </div>
+            
+            <div class="form-group col-md-6">
+                <label for="inputPassword4">Password</label>
+                <input type="password" #password= "ngModel" required class="form-control" id="inputPassword4" 
+                placeholder="Password...." name="password" [ngModel]= "userModel.Password" 
+                [class.is-invalid] = "password.invalid && password.touched">
+                <small class="text-danger" [class.d-none] = "password.valid || password.untouched"> Password is required </small>
+            </div>
+        </div>
+        
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                    <label for="inputEmail4">Email</label>
+                    <input type="email" #email="ngModel" required class="form-control" id="inputEmail4" placeholder="Email"
+                    name= "email" [(ngModel)]= "userModel.Email" [class.is-invalid]="email.invalid && email.touched">
+                    <small class="text-danger" [class.d-none] = "email.valid || email.untouched"> email is required </small>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputmobile">Mobile:</label>
+                <input type="number" #mobile="ngModel" pattern= "^\d{10}$" required class="form-control" id="inputmobile" 
+                placeholder="12345678" name= "mobile" [(ngModel)]="userModel.Mobile" [class.is-invalid]= "mobile.invalid 
+                && mobile.touched">
+                <!-- <small class="text-danger" [class.d-none] = "mobile.valid || mobile.untouched"> mobile Number is required </small> -->
+                <div *ngIf= "mobile.errors && (mobile.valid || mobile.untouched)">
+                    <small class="text-danger" *ngIf= "mobile.errors.required">Mobile number is required</small>
+                    <small class="text-danger" *ngIf= "mobile.errors.pattern">Mobile number must be of 10 digits!</small>
+                </div>
+            </div>
+        </div>
+        
+    
+        <div class="form-group">
+            <label for="inputAddress">Address</label>
+            <input type="text" #address="ngModel" required class="form-control" id="inputAddress" placeholder="1234 Main St"
+            name= "address" [(ngModel)]= "userModel.Address" [class.is-invalid]= "address.invalid && address.touched">
+            <small class="text-danger" [class.d-none] = "address.valid || address.untouched"> Address is required </small>
+        </div>
+        
+        <div class="form-group">
+            <label for="inputAddress2">Address2</label>
+            <input type="text" #address2 class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor"
+            name="address2" [(ngModel)]= "userModel.Address2">
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputCity">City</label>
+                <input type="text" #city="ngModel" required class="form-control" id="inputCity" placeholder="Select a city"
+                name="city" [(ngModel)]= "userModel.City" [class.is-invalid]= "city.invalid && city.touched">
+                <small class="text-danger" [class.d-none] = "city.valid || city.untouched"> City is required </small>
+            </div>
+            <div class="form-group col-lg-6 col-md-4 col-sm-2 ">
+                <label for="inputState">State</label>
+                <select id="inputState" class="form-control">
+                <option selected>Choose...</option>
+                <option>...</option>
+            </select>
+            </div>
+            <div class="form-group col-md-2">
+                <label for="inputZip">Zip</label>
+                <input type="text" #zip="ngModel" required class="form-control" pattern= "^\d{6}$" id="inputZip"
+                name="zip" [(ngModel)]= "userModel.Zip" [class.is-invalid]= "zip.invalid && zip.touched">
+                <!-- <small class="text-danger" [class.d-none] = "zip.valid || zip.untouched"> Pin Code is required </small> -->
+                <div *ngIf= "zip.errors && (zip.valid || zip.untouched)">
+                        <small class="text-danger" *ngIf= "zip.errors.required">Pin Code is required</small>
+                        <small class="text-danger" *ngIf= "zip.errors.pattern">Pin Code must be of 6 digits!</small>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="gridCheck">
+                <label class="form-check-label" for="gridCheck">
+                    Check me out
+                </label>
+            </div>
+        </div>
+            <button type="submit" class="btn btn-primary" [disabled] = "userForm.form.invalid">Sign Up</button>
+    </form>         
+</div>
