@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RegisterUser } from '../register-user';
+import { Registeruser } from '../registeruser';
 import { SignUpService } from '../sign-up.service';
 
 
@@ -15,7 +15,7 @@ export class RegisterUserComponent implements OnInit {
   ngOnInit() {
   }
 
-  userModel = new RegisterUser('Robert Brownie', 'password', 1234567890, 'abc@TestBed.com', '1234 main st', 
+  userModel = new Registeruser('Robert Brownie', 'password', 1234567890, 'abc@TestBed.com', '1234 main st', 
   'appartment, studio or floor', 'Bangalore', 'Karnataka', 560043, true, "12/08/1996", "5/09/2011", "admin" )
 
   onSubmit(){

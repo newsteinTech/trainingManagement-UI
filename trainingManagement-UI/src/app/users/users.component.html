@@ -1,0 +1,14 @@
+<div class="row mt-5">
+        <div class="col-md-4 mb-3" *ngFor = "let user of users">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h4 class="card-title"> {{user.UserName}} </h4>
+                    <p class="class-text">{{user.Mobile}}</p>
+                    <button class="btn btn-primary">Buy Tickets!</button>
+                </div>
+                <div class="card-footer">
+                    {{user.CreatedDate}}
+                </div>
+            </div>
+        </div>
+    </div>

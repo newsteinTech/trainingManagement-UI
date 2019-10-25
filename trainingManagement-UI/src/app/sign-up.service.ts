@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http'
-import { RegisterUser } from './register-user';
+import { Registeruser } from './registeruser';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +11,7 @@ export class SignUpService {
 
   constructor( private _http: HttpClient) { }
 
-  signUp(register : RegisterUser){
+  signUp(register : Registeruser){
     return this._http.post<any>(this._url, register);
   }
 }

@@ -1,8 +1,8 @@
-export class RegisterUser {
+export class Registeruser {
     constructor(
         public UserName: string,
         public Password: string,
-        public Mobile:number,
+        public Mobile: number,
         public Email: string,
         public Address: string,
         public Address2: string,
@@ -12,6 +12,6 @@ export class RegisterUser {
         public IsActive: boolean,
         public CreatedDate: string,
         public UpdatedDate: string,
-        public Role: string
+        public Role:string
     ){}
 }
